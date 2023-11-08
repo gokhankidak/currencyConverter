@@ -10,44 +10,34 @@ import UIKit
 
 class ConverterViewContoller : UIViewController,UITextFieldDelegate
 {
-    var selectedTextField = UITextField()
-    var converterView = ConverterView()
+    var converterView : ConverterView?
     var moneyUnitCodes : [String] = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(converterView.view)
-        
-        view.backgroundColor = .orange
-        view.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-        }
-        
-        
-        converterView.pickerView.delegate = self
-        converterView.pickerView.dataSource = self
-
-        converterView.fromTextField.delegate = self
-        converterView.toTextField.delegate = self
-        converterView.amountTextField.delegate = self
+        converterView = ConverterView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        view.addSubview(converterView!)
+        converterView!.controller = self
         
         moneyUnitCodes = MoneyData.moneyUnitCodes
-
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.selectedTextField = textField
-    }
-    
-    @IBAction func didCalculatePressed(_ sender: Any) {
+    func didCalculatePressed() {
         var conversionRate : Double = 0.0
+        
+        print("Did calculatePressed")
+        guard let converterView = converterView
+            else{
+                return
+            }
+        
         if(moneyUnitCodes.contains(converterView.fromTextField.text ?? "") && moneyUnitCodes.contains(converterView.toTextField.text ?? "")){
             DataAccess.shared.fetchData(from: converterView.fromTextField.text!, to: converterView.toTextField.text!){rate in
                 conversionRate = rate
-                if let amount  = Double(self.converterView.amountTextField.text ?? "0") {
+                if let amount  = Double(converterView.amountTextField.text ?? "0") {
                     let result = amount * conversionRate
-                    self.converterView.resultLabel.text = String(format : "%.3f",result)
+                    converterView.resultLabel.text = String(format : "%.3f",result)
                 }
             }
         }
@@ -64,24 +54,4 @@ class ConverterViewContoller : UIViewController,UITextFieldDelegate
     }
 }
 
-extension ConverterViewContoller : UIPickerViewDelegate,UIPickerViewDataSource
-{
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return moneyUnitCodes.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return moneyUnitCodes[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedTextField.text = moneyUnitCodes[row]
-        selectedTextField.resignFirstResponder()
-    }
-    
-}
+

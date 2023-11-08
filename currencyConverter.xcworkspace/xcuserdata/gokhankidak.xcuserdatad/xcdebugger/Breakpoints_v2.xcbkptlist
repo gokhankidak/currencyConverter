@@ -5,25 +5,83 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8AC5E848-1B3E-4D5E-9525-8BAAD3F2E8EF"
-            shouldBeEnabled = "Yes"
-            nameForDebugger = "UIViewAlertForUnsatisfiableConstraints"
+            uuid = "6363036B-B7E9-47AA-BE20-D4E36A65E8E1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "UIViewAlertForUnsatisfiableConstraints"
-            moduleName = "">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
+            filePath = "currencyConverter/View/ConverterView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "ConverterView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EC2BCDD-5406-4077-B5AB-A7C322BF1749"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "currencyConverter/View/ConverterView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "didCalculatePressed()"
+            landmarkType = "7">
             <Locations>
+               <Location
+                  uuid = "3EC2BCDD-5406-4077-B5AB-A7C322BF1749 - 3e991bd01c29eba4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "currencyConverter.ConverterView.didCalculatePressed() -&gt; ()"
+                  moduleName = "currencyConverter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gokhankidak/Desktop/iOS%20Learn/currencyConverter/currencyConverter/View/ConverterView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "3EC2BCDD-5406-4077-B5AB-A7C322BF1749 - 3e991bd01c29eb85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "currencyConverter.ConverterView.didCalculatePressed() -&gt; ()"
+                  moduleName = "currencyConverter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gokhankidak/Desktop/iOS%20Learn/currencyConverter/currencyConverter/View/ConverterView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "48">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96F967A3-B58F-494E-BE5A-34096F2B50B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "currencyConverter/View/ConverterView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
