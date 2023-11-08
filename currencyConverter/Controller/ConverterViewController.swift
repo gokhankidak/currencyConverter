@@ -5,11 +5,10 @@
 //  Created by Gökhan Kıdak on 26.10.2023.
 //
 
-import IQKeyboardManagerSwift
 import SnapKit
 import UIKit
 
-class ConverterViewContoller : ViewController,UITextFieldDelegate
+class ConverterViewContoller : UIViewController,UITextFieldDelegate
 {
     var selectedTextField = UITextField()
     var converterView = ConverterView()
@@ -17,6 +16,14 @@ class ConverterViewContoller : ViewController,UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.addSubview(converterView.view)
+        
+        view.backgroundColor = .orange
+        view.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
         
         converterView.pickerView.delegate = self
         converterView.pickerView.dataSource = self
@@ -26,6 +33,7 @@ class ConverterViewContoller : ViewController,UITextFieldDelegate
         converterView.amountTextField.delegate = self
         
         moneyUnitCodes = MoneyData.moneyUnitCodes
+
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

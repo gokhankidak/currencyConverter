@@ -13,7 +13,6 @@ class DataAccess
     public static var shared = DataAccess()
     let requestKey = "https://api.currencyapi.com/v3/latest?apikey=cur_live_r6VAZ8fT3l6P1C1ErMI2viYUwnbXoHraiUgm6BbN&base_currency="
     
-    
     func fetchData(from : String, to : String, completion : @escaping (_ rate : Double) -> Void){
         var result = 0.0
         let request = AF.request(requestKey + from)
